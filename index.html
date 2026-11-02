@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#eef3ea">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Калории">
+<title>AI Calorie Tracker</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg id="forest" viewBox="0 0 400 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><symbol id="p" viewBox="0 0 40 100" preserveAspectRatio="none"><path d="M20 0 33 34H26L37 58H27L40 84H23V100H17V84H0L13 58H3L14 34H7Z"/></symbol><linearGradient id="mi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--mist);stop-opacity:0"/><stop offset=".5" style="stop-color:var(--mist)"/><stop offset="1" style="stop-color:var(--mist);stop-opacity:0"/></linearGradient></defs><circle cx="296" cy="120" r="30" style="fill:var(--orb)"/><path style="fill:var(--f1)" d="M0 575C70 545 140 560 210 540S340 535 400 555V800H0Z"/><g style="fill:var(--f1)"><use href="#p" x="-13" y="487" width="39" height="98"/><use href="#p" x="16" y="505" width="32" height="80"/><use href="#p" x="44" y="515" width="28" height="70"/><use href="#p" x="66" y="482" width="41" height="103"/><use href="#p" x="87" y="511" width="30" height="74"/><use href="#p" x="113" y="512" width="29" height="73"/><use href="#p" x="150" y="513" width="29" height="72"/><use href="#p" x="173" y="503" width="33" height="82"/><use href="#p" x="188" y="500" width="34" height="85"/><use href="#p" x="215" y="514" width="28" height="71"/><use href="#p" x="246" y="486" width="40" height="99"/><use href="#p" x="269" y="495" width="36" height="90"/><use href="#p" x="289" y="487" width="39" height="98"/><use href="#p" x="316" y="503" width="33" height="82"/><use href="#p" x="337" y="482" width="41" height="103"/><use href="#p" x="377" y="501" width="34" height="84"/></g><rect y="540" width="400" height="110" fill="url(#mi)"/><path style="fill:var(--f2)" d="M0 660C90 625 170 650 250 625S350 620 400 640V800H0Z"/><g style="fill:var(--f2)"><use href="#p" x="-21" y="492" width="63" height="158"/><use href="#p" x="8" y="526" width="50" height="124"/><use href="#p" x="45" y="508" width="57" height="142"/><use href="#p" x="67" y="522" width="51" height="128"/><use href="#p" x="106" y="539" width="44" height="111"/><use href="#p" x="151" y="536" width="46" height="114"/><use href="#p" x="185" y="504" width="58" height="146"/><use href="#p" x="204" y="491" width="64" height="159"/><use href="#p" x="252" y="534" width="46" height="116"/><use href="#p" x="286" y="515" width="54" height="135"/><use href="#p" x="309" y="534" width="46" height="116"/><use href="#p" x="339" y="486" width="66" height="164"/><use href="#p" x="383" y="522" width="51" height="128"/></g><rect y="625" width="400" height="110" fill="url(#mi)"/><path style="fill:var(--f3)" d="M0 735C100 705 200 730 290 712S370 708 400 722V800H0Z"/><g style="fill:var(--f3)"><use href="#p" x="-56" y="553" width="96" height="239"/><use href="#p" x="-13" y="594" width="79" height="198"/><use href="#p" x="22" y="600" width="77" height="192"/><use href="#p" x="41" y="515" width="111" height="277"/><use href="#p" x="268" y="602" width="76" height="190"/><use href="#p" x="295" y="575" width="87" height="217"/><use href="#p" x="329" y="576" width="86" height="216"/><use href="#p" x="367" y="596" width="78" height="196"/></g></svg>
+<main>
+  <header>
+    <div><div class="dn"><button class="ix" data-act="prev" id="prevbtn" aria-label="Предыдущий день"></button><small id="date" data-act="gotoday"></small><button class="ix" data-act="next" id="nextbtn" aria-label="Следующий день"></button></div><h1 id="ttl">Сегодня</h1></div>
+    <div class="hb"><button class="rb" data-act="theme" id="themebtn" aria-label="Сменить тему"></button><button class="rb" data-act="settings" id="setbtn" aria-label="Настройки"></button></div>
+  </header>
+  <nav class="seg"><button data-act="tab" data-t="home" class="on">Обзор</button><button data-act="tab" data-t="diary">Дневник</button><button data-act="tab" data-t="health">Вода и вес</button></nav>
+  <section id="view"></section>
+</main>
+<div class="fab"><button class="rb find" data-act="find" id="findbtn" aria-label="Найти продукт"></button><button class="btn pri wide" data-act="scan" id="fabbtn"></button></div>
+<div id="scan" hidden><video id="vid" playsinline muted autoplay></video><img id="shot" alt="" hidden><div id="ui"></div></div>
+<div id="sheet" hidden><div id="sheetbody"></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="foods.js"></script>
+<script src="barcode.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
